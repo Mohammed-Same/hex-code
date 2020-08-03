@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hex Color</title>
+	<style type="text/css">
+		.container{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+
+		}
+		button{
+			display: block;
+			text-align: center;
+			box-shadow: 0px 5px 20px;
+			cursor: pointer;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Hex Color : <span id="hex-value"></span></h1>
+		<button id="btn">Click Me:)</button>
+	</div>
+<script type="text/javascript">
+	const button = document.getElementById('btn');
+	const body = document.querySelector('body');
+	const hexValue=[1,2,3,4,5,6,7,8,9]
+	const value = document.getElementById('hex-value');
+
+	document.addEventListener('click',colorChange)
+	function colorChange() {
+	 	let hex = '#'
+	 	for (let i =0; i<6;i++ ){
+	 		const index = Math.floor(Math.random()*hexValue.length)
+	 		hex += hexValue[index]
+	 		}
+	 		{
+	 		value.textContent = hex 
+	 		body.style.backgroundColor = hex
+	 		}
+	 } 
+</script>
+</body>
+</html>
